@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import PopupWithForm from "./PopupWithForm";
 
 function ConfirmDeletePopup({isOpen, onClose, onCardDelete}){

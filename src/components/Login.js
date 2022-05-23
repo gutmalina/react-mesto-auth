@@ -1,4 +1,4 @@
-import React, {useState, useCallback, useEffect} from "react";
+import {useState, useCallback, useEffect} from "react";
 import FormLogin from "./FormLogin";
 import ButtonSubmit from "./ButtonSubmit";
 
@@ -21,7 +21,7 @@ function Login({handleLogin, location}){
 
 /** disabled кнопки при переходе на страницу */
   useEffect(()=>{
-    setIsInputEmail(true) 
+    setIsInputEmail(true)
     setIsInputPassword(true)
   }, [location])
 

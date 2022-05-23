@@ -3,9 +3,9 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 122%;
-  color: #FFFFFF;
+  color: #A9A9A9;;
   text-decoration-line: none;
-  margin-top: 7px;
+  margin-left: 24px;
 }
 .header__menu_link:hover{
   opacity: 0.6;

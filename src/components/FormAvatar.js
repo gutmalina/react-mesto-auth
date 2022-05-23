@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import {useEffect} from 'react';
 
 function FormAvatar({imageRef, link, isInputLink, setIsInputLink, onChange, isOpen, setIsButtonSubmitValid}){
 

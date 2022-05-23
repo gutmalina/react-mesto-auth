@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import {useState, useEffect} from "react";
 
 function ButtonSubmit({name, onIsButtonSubmitValid, contentButton}){
   const [isDisabled, setIsDisabled] = useState(true)

@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from 'react';
+import {useRef, useEffect} from 'react';
 
 function FormMesto({name, link, onChange, isOpen, setIsButtonSubmitValid, isInputName, setIsInputName, isInputLink, setIsInputLink}){
   const inputNameRef = useRef('')

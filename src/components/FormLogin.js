@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from "react";
+import {useRef, useEffect} from "react";
 
 function FormLogin({email, password, isInputEmail, setIsInputEmail, isInputPassword, setIsInputPassword, onChange, setIsButtonSubmitValid}){
   const inputEmailRef = useRef('')

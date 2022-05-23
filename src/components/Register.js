@@ -1,4 +1,4 @@
-import React, {useState, useCallback, useEffect} from "react";
+import {useState, useCallback, useEffect} from "react";
 import FormRegister from "./FormRegister";
 import {Link} from 'react-router-dom';
 import ButtonSubmit from "./ButtonSubmit";
@@ -45,40 +45,38 @@ function Register({handleRegister, location}){
   }
 
   return(
-    <>
-      <section className="autorization indent__autorization">
-        <h2 className="autorization__title">Регистрация</h2>
-        <form name="autorization-form"
-          className ="form form_autorization"
-          onSubmit={handleSubmit}
-          noValidate>
-          <fieldset className="autorization__contact">
-          <FormRegister
-            email={email}
-            password={password}
-            isInputEmail={isInputEmail}
-            setIsInputEmail={setIsInputEmail}
-            isInputPassword={isInputPassword}
-            setIsInputPassword={setIsInputPassword}
-            onChange={handleChange}
-            setIsButtonSubmitValid={setIsButtonSubmitValid}
-          />
-          </fieldset>
-          <ButtonSubmit
-            name="autorization"
-            contentButton={isContentButton}
-            onIsButtonSubmitValid={isButtonSubmitValid}
-          />
-        </form>
-          <div className="autorization__signin">
-            <p className="autorization__subtitle">Уже зарегистрированы?
-              <Link
-                to="/sign-in"
-                className="autorization__login-link"> Войти</Link>
-            </p>
-          </div>
-      </section>
-    </>
+    <section className="autorization indent__autorization">
+      <h2 className="autorization__title">Регистрация</h2>
+      <form name="autorization-form"
+        className ="form form_autorization"
+        onSubmit={handleSubmit}
+        noValidate>
+        <fieldset className="autorization__contact">
+        <FormRegister
+          email={email}
+          password={password}
+          isInputEmail={isInputEmail}
+          setIsInputEmail={setIsInputEmail}
+          isInputPassword={isInputPassword}
+          setIsInputPassword={setIsInputPassword}
+          onChange={handleChange}
+          setIsButtonSubmitValid={setIsButtonSubmitValid}
+        />
+        </fieldset>
+        <ButtonSubmit
+          name="autorization"
+          contentButton={isContentButton}
+          onIsButtonSubmitValid={isButtonSubmitValid}
+        />
+      </form>
+        <div className="autorization__signin">
+          <p className="autorization__subtitle">Уже зарегистрированы?
+            <Link
+              to="/sign-in"
+              className="autorization__login-link"> Войти</Link>
+          </p>
+        </div>
+    </section>
   )
 }
 

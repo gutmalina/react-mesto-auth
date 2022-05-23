@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import {useEffect, useRef} from 'react';
 
 function FormProfile({ name, description, isInputName, setIsInputName, isInputDescription, setIsInputDescription, onChange, isOpen, setIsButtonSubmitValid}){
   const inputNameRef = useRef(true)

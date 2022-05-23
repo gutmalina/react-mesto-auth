@@ -12,7 +12,8 @@
 @import url(../src/blocks/indent/__autorization/indent__autorization.css);
 @import url(../src/blocks/button/button.css);
 @import url(../src/blocks/button/_active/button_active-like.css);
-@import url(../src/blocks/button/_inactive/button_inactive-like.css);
+@import url(../src/blocks/button/_inactive/button_inactive.css);
+@import url(../src/blocks/button/_inactive-like/button_inactive-like.css);
 @import url(../src/blocks/button/_avatar/button_avatar.css);
 @import url(../src/blocks/button/_type/button_type_edit-profile.css);
 @import url(../src/blocks/button/_type/button_type_add-profile.css);
@@ -20,6 +21,7 @@
 @import url(../src/blocks/button/_type/button_type_delete-card.css);
 @import url(../src/blocks/button/_type/button_type_delete-hidden.css);
 @import url(../src/blocks/button/_style/button_style_close.css);
+@import url(../src/blocks/button/_style/button_style_close-active.css);
 @import url(../src/blocks/button/_style/button_style_save.css);
 @import url(../src/blocks/button/_style/button_style_save-avatar.css);
 @import url(../src/blocks/button/_style/button_style_delete.css);
@@ -28,8 +30,19 @@
 @import url(../src/blocks/button/_teme/button_teme_light.css);
 @import url(../src/blocks/button/_teme/button_teme_light_invalid.css);
 @import url(../src/blocks/header/header.css);
+@import url(../src/blocks/header/_activ/header_activ.css);
 @import url(../src/blocks/header/__logo/header__logo.css);
+@import url(../src/blocks/header/__logo/_active/header__logo_active.css);
+@import url(../src/blocks/header/__burger/header__burger.css);
+@import url(../src/blocks/header/__burger/_active/header__burger_active.css);
+@import url(../src/blocks/header/__burger/_item/header__burger_item.css);
+@import url(../src/blocks/header/__menu/header__menu.css);
+@import url(../src/blocks/header/__menu/_activ/header__menu_activ.css);
 @import url(../src/blocks/header/__menu/_link/header__menu_link.css);
+@import url(../src/blocks/header/__menu/_link-active/header__menu_link-active.css);
+@import url(../src/blocks/header/__menu/_item/header__menu_item.css);
+@import url(../src/blocks/header/__menu/_item-active/header__menu_item-active.css);
+@import url(../src/blocks/header/__subtitle/header__subtitle.css);
 @import url(../src/blocks/content/content.css);
 @import url(../src/blocks/autorization/autorization.css);
 @import url(../src/blocks/autorization/__title/autorization__title.css);

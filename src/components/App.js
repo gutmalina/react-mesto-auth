@@ -15,7 +15,7 @@ import SuccessPopup from './SuccessPopup';
 import FailPopup from './FailPopup';
 import {Route, Switch, Redirect, useLocation, useHistory } from 'react-router-dom';
 import ProtectedRoute from './ProtectedRoute';
-import *as auth from './Auth';
+import *as auth from '../utils/Auth';
 
 function App() {
   const [currentUser, setCurrentUser] = useState({})
@@ -31,16 +31,19 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false)
   const location = useLocation()
   const history = useHistory()
+  const [isEmailAuth, setIsEmailAuth] = useState('')
 
 /** Загрузка страницы, получение данных профиля и массив карточек */
   useEffect(()=>{
-    Promise.all([api.getProfile(), api.getCards()])
-      .then(([res, cards]) => {
-        setCurrentUser(res)
-        setCards(cards)
-      })
-      .catch(console.log)
-  }, [])
+    if(loggedIn){
+      Promise.all([api.getProfile(), api.getCards()])
+        .then(([res, cards]) => {
+          setCurrentUser(res)
+          setCards(cards)
+        })
+        .catch(console.log)
+    }
+  }, [loggedIn])
 
 /** Отправка новых данных профиля на сервер и обновление на странице */
   const handleUpdateUser=(updateUser)=>{
@@ -131,8 +134,9 @@ function App() {
     .then((data) => {
       if (data.token){
         localStorage.setItem('jwt', data.token)
-        tokenCheck();
+        tokenCheck(updateLogin.email);
       }
+      setIsEmailAuth(updateLogin.email)
     })
     .catch(()=>{
       setIsFailPopupOpen(true)
@@ -144,14 +148,15 @@ function App() {
 
 /** получение токена */
   const tokenCheck = () => {
-    if (localStorage.getItem('jwt')){
-      let jwt = localStorage.getItem('jwt');
+    let jwt = localStorage.getItem('jwt')
+    if(jwt){
       auth.getContent(jwt)
       .then((res) => {
         if (res){
           setLoggedIn(true);
         }
       })
+      .catch(console.log)
     }
   }
 
@@ -162,6 +167,7 @@ function App() {
     history.push('/sign-in');
   }
 
+/**использование токена при возврате на сайт */
   useEffect(() => {
     tokenCheck();
   }, [])
@@ -217,8 +223,8 @@ function App() {
         <CurrentUserContext.Provider
           value={currentUser}>
           <Header
-            onLocation={location}
-            signOut={signOut}/>
+            signOut={signOut}
+            onEmail={isEmailAuth}/>
           <Switch>
             <ProtectedRoute
               exact path="/"

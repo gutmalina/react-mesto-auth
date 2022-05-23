@@ -1,4 +1,5 @@
 import {useEffect, useRef} from "react";
+import ButtonClose from "./ButtonClose";
 
 function Popup({name, isOpen, onClose, children, card}){
   const isOpenPopup = isOpen || card
@@ -25,11 +26,9 @@ function Popup({name, isOpen, onClose, children, card}){
     <div
       className={className}
       ref={popupRef}>
-      <button type="button"
-        className="button popup__close button_style_close"
-        aria-label="Закрыть"
-        onClick={onClose}>
-      </button>
+      <ButtonClose
+        onClose={onClose}>
+      </ButtonClose>
       {children}
     </div>
   )
