@@ -153,6 +153,7 @@ function App() {
       auth.getContent(jwt)
       .then((res) => {
         if (res){
+          setIsEmailAuth(res.data.email)
           setLoggedIn(true);
         }
       })
